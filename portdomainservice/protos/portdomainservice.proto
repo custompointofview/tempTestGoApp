@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package service;
+import "google/protobuf/empty.proto";
+
+option go_package = "/;service";
+
+service PortDomainService {
+  rpc GetPort(PortRequest) returns (PortResponse) {}
+  rpc CreateOrUpdatePort(PortRequest) returns (PortResponse) {}
+  rpc DeletePort(PortRequest) returns (google.protobuf.Empty) {}
+}
+
+message Port {
+  string id = 1;
+  string name = 2;
+  string city = 3;
+  string country = 4;
+  repeated string alias = 5;
+  repeated string regions = 6;
+  repeated float coordinates = 7;
+  string province = 8;
+  string timezone = 9;
+  repeated string unlocs = 10;
+  string code = 11;
+}
+
+message PortRequest { Port port = 1; }
+message PortResponse { Port port = 1; }
