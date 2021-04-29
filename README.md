@@ -17,6 +17,8 @@ This will regenerate all the needed _.go_ files for the application.
 
 > Please do not modify the generated Go files.
 
+> If you need a DB initialization, please add a ports.json file as in the above example. The database will be initialized at first run time.
+
 ## Architecture
 
 There are 3 services:

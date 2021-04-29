@@ -15,3 +15,6 @@
 # vendor/
 .history
 .vscode
+
+# avoiding large files in git
+ports.json
