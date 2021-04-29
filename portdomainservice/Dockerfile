@@ -12,3 +12,7 @@ RUN go mod download
 # build service
 WORKDIR ${ROOT}
 RUN go build -v ./cmd/server
+
+# format & test
+RUN gofmt -l .
+RUN go test ./...
