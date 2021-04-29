@@ -12,6 +12,11 @@ func TestNewDBHandler(t *testing.T) {
 		assert.NotNil(t, h)
 		assert.IsType(t, &MemDBHandler{}, h)
 	})
+	t.Run("MONGO", func(t *testing.T) {
+		h := NewDBHandler(DBHandler_MONGO, &DBConfig{})
+		assert.NotNil(t, h)
+		assert.IsType(t, &MongoDBHandler{}, h)
+	})
 	t.Run("BadType", func(t *testing.T) {
 		h := NewDBHandler(3, &DBConfig{})
 		assert.Nil(t, h)

@@ -29,7 +29,7 @@ func main() {
 	}
 	// crate db handler
 	dbConfig := dbh.NewDBConfig(DB_DATABASE_NAME, DB_COLLECTION_NAME)
-	dbHandler := dbh.NewDBHandler(dbh.DBHandler_MEM, dbConfig)
+	dbHandler := dbh.NewDBHandler(dbh.DBHandler_MONGO, dbConfig)
 
 	// create servers
 	pdsServ := pds.NewServer(dbHandler)
