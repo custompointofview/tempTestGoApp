@@ -12,7 +12,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
-// DEFAULT PORTDOMAINSERVICE ENDPOINT
+// DEFAULT ENDPOINT
 const PORTDOMAINSERVICE_ENDPOINT = "portdomainservice:8001"
 
 func CreateRouter(handler handlers.RESTHandlerInterf) *mux.Router {
