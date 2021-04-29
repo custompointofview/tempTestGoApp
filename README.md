@@ -17,6 +17,14 @@ This will regenerate all the needed _.go_ files for the application.
 
 > Please do not modify the generated Go files.
 
+## Architecture
+
+There are 3 services:
+
+-   `ClientAPI` - a service with a REST API dedicated to user interaction - port `:8000`
+-   `PortDomainService` - a service with a gRPC interface that will interact with a Database to store diverse information resulted from user interaction - port `:8001`
+-   `MongoDB` - a MongoDB Server dedicated to store the information - port `:27017`
+
 ## Docker & Docker Compose
 
 The app uses `docker-compose` to create a working local environment.

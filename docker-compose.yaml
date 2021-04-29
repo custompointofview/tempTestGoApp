@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+    mongodbservice:
+        image: mongo:latest
+        container_name: mongodbservice
+        ports:
+            - 27017:27017
+        volumes:
+            - mongodb_data:/data/db
+    clientapi:
+        build:
+            context: ./clientapi/
+        container_name: clientapiservice
+        image: clientapiservice:latest
+        ports:
+            - 8000:8000
+        links:
+            - portdomainservice
+    portdomainservice:
+        build:
+            context: ./portdomainservice/
+        image: portdomainservice:latest
+        container_name: portdomainservice
+        ports:
+            - 8001:8001
+        links:
+            - mongodbservice
+
+volumes:
+    mongodb_data:
